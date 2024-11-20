@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cyber Learning Platform</title>
+    <style>
+        /* Global Styles */
+        body {
+            margin: 0;
+            font-family: 'Courier New', Courier, monospace;
+            background-color: #0d0d0d;
+            color: #00ff00; /* Cyber Green */
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+        }
+
+        /* Header */
+        .header {
+            text-align: left;
+            padding: 20px;
+            background-color: #0000FF;
+            color: white;
+        }
+
+        .header h1 {
+            font-size: 2em;
+        }
+
+        /* Side Menu Bar */
+        .side-menu {
+            position: fixed;
+            top: 0;
+            left: -250px;
+            width: 250px;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.85);
+            transition: left 0.3s ease-in-out;
+            padding-top: 60px;
+            z-index: 10;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .side-menu ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .side-menu ul li {
+            padding: 15px;
+            text-align: center;
+            background-color: #333;
+            margin: 5px 0;
+            width: 100%;
+        }
+
+        .side-menu ul li:hover {
+            background-color: #444;
+            cursor: pointer;
+        }
+
+        .side-menu ul li a {
+            color: #00ff00;
+            text-decoration: none;
+            font-size: 1.2em;
+        }
+
+        /* Cyber Hacker Animation Background */
+        .cyber-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('glitchy-background.gif') no-repeat center center fixed;
+            background-size: cover;
+            z-index: -1;
+        }
+
+        .glitch-animation {
+            animation: glitch 1s infinite;
+            color: #ff00ff;
+        }
+
+        /* Course Sections */
+        section {
+            margin: 40px;
+        }
+
+        /* Courses Section */
+        .course-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            padding: 0 20px;
+        }
+
+        .course-card {
+            background-color: #1a1a1a;
+            color: #00ff00;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0px 4px 12px rgba(0, 255, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .course-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0px 6px 20px rgba(0, 255, 0, 0.3);
+        }
+
+        .course-card h3 {
+            font-size: 1.5em;
+        }
+        .course-card p {
+            font-size: 1.1em;
+        }
+
+        /* Skills Section */
+        .skills-section, .projects-section, .recommendations-section {
+            padding: 50px;
+            text-align: center;
+        }
+
+        .skill, .project, .recommendation {
+            display: inline-block;
+            margin: 20px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        /* Menu Toggle Button */
+        #menu-toggle {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background-color: #333;
+            color: #00ff00;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1.5em;
+            cursor: pointer;
+            z-index: 100;
+        }
+
+        /* Glitch Animation */
+        @keyframes glitch {
+            0% { transform: translate(0); }
+            20% { transform: translate(-2px, 2px); }
+            40% { transform: translate(-2px, -2px); }
+            60% { transform: translate(2px, 2px); }
+            80% { transform: translate(2px, -2px); }
+            100% { transform: translate(0); }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            /* Adjust header size */
+            header h1 {
+                font-size: 2em;
+            }
+
+            /* Side menu on small screens */
+            .side-menu {
+                width: 100%;
+                left: -100%;
+                height: 100%;
+            }
+
+            .side-menu ul li {
+                font-size: 1em;
+            }
+
+            /* Adjust course section layout */
+            .course-list {
+                grid-template-columns: 1fr;
+            }
+
+            /* Adjust skills section layout */
+            .skills-section .skill {
+                font-size: 1em;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Side Menu Bar -->
+    <div id="menu" class="side-menu">
+        <ul>
+            <li><a href="aboutus.html">ABOUT US</a></li>
+            <li><a href="">RESULTS</a></li>
+            <li><a href="">FEEDBACK</a></li>
+            <li><a href="#recommendations">Recommendations</a></li>
+            <li><a href="mailto:22191a0228@jntua.ac.in">CONTACT US</a></li>
+        </ul>
+    </div>
+
+    <!-- Menu Toggle Button -->
+    <button id="menu-toggle">&#9776; Menu</button>
+
+    <!-- Main Content -->
+    <div id="main-content">
+        <!-- Header with Profile Info -->
+        <div class="header">
+            <h1><center>CYBER LEARNING PLATFORM</center></h1>
+            <h4>Your Gateway to Learning Cybersecurity & Programming</h4>
+        </div>
+
+        <!-- Courses Section -->
+        <section id="courses">
+            <h2>Available Courses</h2>
+            <div class="course-list">
+                <!-- Course Cards -->
+                <div class="course-card">
+                    <div class="row">
+                     <div class="card h-100">
+                    <h3>DATA BASE MANAGEMENT</h3>
+                    <button>REGISTER</button>
+                    </div>
+                   </div>
+                </div>
+                <div class="course-card">
+                    <h3>NETWORKING</h3>
+                    <button>REGISTER</button>
+                </div>
+                <div class="course-card">
+                    <h3>DEVOPS AND TESTING</h3>
+                    <button><a href="https://forms.gle/f73VXBCeifAj8vsA7">REGISTER</a></button>
+                </div>
+                <div class="course-card">
+                    <h3>BLOCKCHAIN DEVELOPMENT</h3>
+                    <button>REGISTER</button>
+                </div>
+                    <div class="course-card">
+                    <h3>WEB DEVELOPMENT</h3>
+                    <button>REGISTER</button>
+                </div>
+                <div class="course-card">
+                    <h3>DATA SCIENCE AND ANALYTICS</h3>
+                    <button>REGISTER</button>
+                </div>
+                <div class="course-card">
+                    <h3>ARTIFICIAL INTILLIGENCE</h3>
+                    <button>REGISTER</button>
+                </div>
+                <div class="course-card">
+                    <h3>CYBER SECURITY</h3>
+                    <button>REGISTER</button>
+                </div>
+                <div class="course-card">
+                    <h3>SOFTWARE DEVELOPMENT</h3>
+                    <button>REGISTER</button>
+                </div>
+                <div class="course-card">
+                    <h3>CLOUD ARCHITECTURE</h3>
+                    <button>REGISTER</button>
+                </div>
+                <div class="course-card">
+                    <h3>SAP</h3>
+                    <button>REGISTER</button>
+                </div>
+                <div class="course-card">
+                    <h3>Ethical Hacking</h3>
+                    <button>REGISTER</button>
+                </div>
+                <div class="course-card">
+                    <h3>QA AUTOMATION ENGINEER</h3>
+                    <button>REGISTER</button>
+                </div>
+                    <div class="course-card">
+                    <h3>UI/UX DESIGNER</h3>
+                    <button>REGISTER</button>
+                </div>
+                <div class="course-card">
+                    <h3>AI ENGINEER</h3>
+                    <button>REGISTER</button>
+                </div>
+                <div class="course-card">
+                    <h3>AWS</h3>
+                    <button>REGISTER</button>
+                </div>
+                <div class="course-card">
+                    <h3>EMBEDED SYSTEM</h3>
+                    <button>REGISTER</button>
+                </div>
+                <div class="course-card">
+                    <h3>ETHICAL HACKING</h3>
+                    <button>REGISTER</button>
+                </div>
+                <div class="course-card">
+                    <h3>AUTO CAD</h3>
+                    <button>REGISTER</button>
+                </div>
+                <div class="course-card">
+                    <h3>BUSINES DEVELOPMENT</h3>
+                    <button>REGISTER</button>
+                </div>
+                </div>
+            </div>
+        </section>
+
+         <!-- Skills Section -->
+        <section id="skills">
+            <h2>ASSIGNMENT SUBMISSION</h2>
+            <div class="skills-section">
+                <div class="skill">Cybersecurity
+                    <button>Upload Here</button>
+                </div>
+                <div class="skill">ETHICAL HACKING
+                    <button>Upload Here</button>
+                </div>
+                <div class="skill">DATA SCIENCE
+                    <button>Upload Here</button>
+                </div>
+                <div class="skill">WEB DEVELOPMENT
+                    <button>Upload Here</button>
+                </div>
+                <div class="skill">FULLSTACK DEVELOPMENT
+                    <button>Upload Here</button>
+                </div>
+                <div class="skill">CLOUD COMPUTING
+                    <button>Upload Here</button>
+                </div>
+                <div class="skill">ARTIFICIAL INTILIGENCE
+                    <button>Upload Here</button>
+                </div>
+                <div class="skill">NETWORKING
+                    <button>Upload Here</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills">
+            <h2>PROJECT SUBMISSION</h2>
+            <div class="skills-section">
+                <div class="skill">Cybersecurity
+                    <button>Upload Here</button>
+                </div>
+                <div class="skill">ETHICAL HACKING
+                    <button>Upload Here</button>
+                </div>
+                <div class="skill">DATA SCIENCE
+                    <button>Upload Here</button>
+                </div>
+                <div class="skill">WEB DEVELOPMENT
+                    <button>Upload Here</button>
+                </div>
+                <div class="skill">FULLSTACK DEVELOPMENT
+                    <button>Upload Here</button>
+                </div>
+                <div class="skill">CLOUD COMPUTING
+                    <button>Upload Here</button>
+                </div>
+                <div class="skill">ARTIFICIAL INTILIGENCE
+                    <button>Upload Here</button>
+                </div>
+                <div class="skill">NETWORKING
+                    <button>Upload Here</button>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- JavaScript for Menu Toggle -->
+    <script>
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            const menu = document.getElementById('menu');
+            const isOpen = menu.style.left === '0px';
+            menu.style.left = isOpen ? '-250px' : '0px';
+        });
+</script>
+        // Handle form submission
+       
